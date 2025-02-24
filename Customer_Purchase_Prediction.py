@@ -69,18 +69,29 @@ print(classification_report(y_test, y_pred_rf))
 
 # Visualization - Feature Importance (Random Forest)
 feature_importances = pd.Series(rf.feature_importances_, index=X.columns)
+
 plt.figure(figsize=(10, 6))
-feature_importances.nlargest(10).plot(kind='barh')
+feature_importances.nlargest(10).plot(kind='barh', color='royalblue')
 plt.title('Top 10 Important Features - Random Forest')
 plt.xlabel('Importance Score')
 plt.ylabel('Feature Name')
+
+# Save the plot before showing
+plt.savefig("feature_importance.png", bbox_inches='tight', dpi=300)
 plt.show()
 
 # Visualization - Confusion Matrix for Random Forest
 plt.figure(figsize=(6, 4))
-sns.heatmap(confusion_matrix(y_test, y_pred_rf), annot=True, fmt="d", cmap="Blues", 
-            xticklabels=["Not Purchased", "Purchased"], yticklabels=["Not Purchased", "Purchased"])
+conf_matrix = confusion_matrix(y_test, y_pred_rf)
+
+sns.heatmap(conf_matrix, annot=True, fmt="d", cmap="Blues", 
+            xticklabels=["Not Purchased", "Purchased"], 
+            yticklabels=["Not Purchased", "Purchased"])
 plt.title("Confusion Matrix - Random Forest")
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
+
+# Save the plot before showing
+plt.savefig("confusion_matrix.png", bbox_inches='tight', dpi=300)
 plt.show()
+
