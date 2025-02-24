@@ -38,12 +38,12 @@ The **Random Forest model with SMOTE** provided the best balance of precision an
 #### Feature Importance (Random Forest)
 The following bar chart highlights the top 10 most important features in the Random Forest model, showing which variables had the most impact on the purchase prediction.
 
-![Top 10 Important Features - Random Forest](feature_importance.png)
+![Top 10 Important Features - Random Forest](feature_importance_randomforest.png)
 
 #### Confusion Matrix (Random Forest)
 The confusion matrix illustrates the model's performance in classifying purchasing and non-purchasing customers. 
 
-![Confusion Matrix - Random Forest](confusion_matrix.png)
+![Confusion Matrix - Random Forest](confusion_matrix_randomforest.png)
 
 ## How to Use the Jupyter Notebook
 1. Install dependencies:
